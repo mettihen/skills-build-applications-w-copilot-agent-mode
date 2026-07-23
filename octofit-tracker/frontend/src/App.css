@@ -1,0 +1,142 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(260px, 330px) minmax(0, 1fr);
+  min-height: 100svh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px;
+  background: linear-gradient(160deg, #12312b 0%, #183f3a 52%, #d8b45f 180%);
+  color: #f6f0df;
+}
+
+.sidebar h1 {
+  color: #fff7e8;
+  font-size: 34px;
+  line-height: 1.06;
+  margin: 8px 0 0;
+}
+
+.eyebrow {
+  color: #d8b45f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  border-radius: 8px;
+  color: rgba(255, 247, 232, 0.78);
+  font-weight: 700;
+  padding: 10px 12px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff7e8;
+}
+
+.api-status {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.api-status span,
+.resource-meta span {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.api-status code,
+.resource-meta code {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.content-panel {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  padding: 32px;
+}
+
+.resource-view {
+  display: grid;
+  gap: 22px;
+}
+
+.resource-header {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.resource-header h2 {
+  font-size: 42px;
+  margin: 8px 0;
+}
+
+.resource-meta {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: min(360px, 100%);
+  text-align: right;
+}
+
+.octofit-table {
+  --bs-table-bg: #fffaf0;
+  --bs-table-striped-bg: #f7efd9;
+  border: 1px solid #eadcb5;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.octofit-table th {
+  color: #173a34;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.empty-state {
+  border: 1px dashed #d8b45f;
+  border-radius: 8px;
+  color: #5e5648;
+  padding: 32px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 24px;
+  }
+
+  .content-panel {
+    padding: 24px;
+  }
+
+  .resource-header {
+    display: grid;
+  }
+
+  .resource-meta {
+    text-align: left;
+  }
+}

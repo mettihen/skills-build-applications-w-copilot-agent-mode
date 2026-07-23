@@ -1,0 +1,60 @@
+:root {
+  --text: #554f44;
+  --text-h: #173a34;
+  --bg: #f4efe2;
+  --code-bg: rgba(23, 58, 52, 0.08);
+
+  --sans: Avenir Next, Avenir, Montserrat, Trebuchet MS, sans-serif;
+  --heading: Georgia, Cambria, Times New Roman, serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 17px/145% var(--sans);
+  letter-spacing: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  letter-spacing: 0;
+}
+h2 {
+  line-height: 118%;
+  letter-spacing: 0;
+}
+p {
+  margin: 0;
+}
+
+code {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
