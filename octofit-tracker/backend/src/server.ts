@@ -11,12 +11,7 @@ const apiPort = Number(process.env.PORT) || 8000;
 const CODESPACE_NAME = process.env.CODESPACE_NAME;
 const localhostUrl = `http://localhost:${apiPort}`;
 
-function buildCodespaceUrl(codespaceName: string) {
-  const codespaceHost = `${codespaceName}-${apiPort}.app.github.dev`;
-  return `https://${codespaceHost}`;
-}
-
-const codespace_url = CODESPACE_NAME ? buildCodespaceUrl(CODESPACE_NAME) : undefined;
+const codespace_url = CODESPACE_NAME ? `https://${CODESPACE_NAME}-8000.app.github.dev` : undefined;
 const apiBaseUrl = codespace_url ?? localhostUrl;
 
 app.use(express.json());
