@@ -19,10 +19,6 @@ const navigationItems = [
   { path: '/workouts', label: 'Workouts' },
 ]
 
-function resourceUrl(resourceName) {
-  return `${apiBaseUrl}/${resourceName}/`
-}
-
 function App() {
   return (
     <div className="app-shell">
@@ -52,11 +48,11 @@ function App() {
         )}
         <Routes>
           <Route path="/" element={<Navigate to="/activities" replace />} />
-          <Route path="/activities" element={<Activities endpoint={resourceUrl('activities')} />} />
-          <Route path="/leaderboard" element={<Leaderboard endpoint={resourceUrl('leaderboard')} />} />
-          <Route path="/teams" element={<Teams endpoint={resourceUrl('teams')} />} />
-          <Route path="/users" element={<Users endpoint={resourceUrl('users')} />} />
-          <Route path="/workouts" element={<Workouts endpoint={resourceUrl('workouts')} />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/teams" element={<Teams />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/workouts" element={<Workouts />} />
         </Routes>
       </main>
     </div>
