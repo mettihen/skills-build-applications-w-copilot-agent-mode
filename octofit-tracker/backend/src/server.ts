@@ -1,5 +1,4 @@
 import express from 'express';
-import { apiBaseUrl } from './config/api';
 import './config/database';
 import { activitiesRouter } from './routes/activities';
 import { leaderboardRouter } from './routes/leaderboard';
@@ -8,7 +7,17 @@ import { usersRouter } from './routes/users';
 import { workoutsRouter } from './routes/workouts';
 
 const app = express();
-const port = Number(process.env.PORT) || 8000;
+const apiPort = Number(process.env.PORT) || 8000;
+const CODESPACE_NAME = process.env.CODESPACE_NAME;
+const localhostUrl = `http://localhost:${apiPort}`;
+
+function buildCodespaceUrl(codespaceName: string) {
+  const codespaceHost = `${codespaceName}-${apiPort}.app.github.dev`;
+  return `https://${codespaceHost}`;
+}
+
+const codespace_url = CODESPACE_NAME ? buildCodespaceUrl(CODESPACE_NAME) : undefined;
+const apiBaseUrl = codespace_url ?? localhostUrl;
 
 app.use(express.json());
 
@@ -27,6 +36,6 @@ app.use((error: Error, _req: express.Request, res: express.Response, _next: expr
   res.status(500).json({ message: 'Internal server error' });
 });
 
-app.listen(port, () => {
+app.listen(apiPort, () => {
   console.log(`OctoFit backend listening at ${apiBaseUrl}`);
 });
