@@ -124,8 +124,8 @@ function ResourceTable({ title, description, endpoint, columns }) {
               </tr>
             </thead>
             <tbody>
-              {items.map((item) => (
-                <tr key={item._id || item.id || JSON.stringify(item)}>
+              {items.map((item, index) => (
+                <tr key={item._id || item.id || index}>
                   {columns.map((column) => (
                     <td key={column.key}>{formatCellValue(column.render(item))}</td>
                   ))}
